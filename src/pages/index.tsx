@@ -60,7 +60,7 @@ export default function Home() {
             onSlideChange={() => console.log('slide change')}
           >
             {contents.map((content,index)=>(
-            <SwiperSlide key={index}><div className='swiper-div'><Image src={content.picture} alt='picture' /><p>{content.text}</p></div></SwiperSlide>              
+            <SwiperSlide key={index}><div className='swiper-div'><Image src={content.picture} alt='{content.picture}' /><p>{content.text}</p></div></SwiperSlide>              
             ))}
           </Swiper>
         </div>
