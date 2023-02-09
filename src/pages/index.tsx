@@ -52,7 +52,7 @@ export default function Home() {
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             spaceBetween={5}
             slidesPerView={1}
-            autoplay={{ 'delay': 5000 }}
+            autoplay={{ 'delay': 2000 }}
             navigation
             pagination={{ clickable: true }}
             scrollbar={true}
