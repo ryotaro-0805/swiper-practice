@@ -12,3 +12,8 @@
     text-align: center;
     height: 200px;
 }
+
+.swiper-div Image{
+    height: 1000px;
+    /* object-fit: cover; */
+}

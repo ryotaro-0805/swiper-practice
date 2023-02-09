@@ -11,6 +11,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
+import pic1 from '../../public/img/pic1.jpg';
+import pic2 from '../../public/img/pic2.jpg';
+import pic3 from '../../public/img/pic3.webp';
+import pic4 from '../../public/img/pic4.webp';
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <>
@@ -34,10 +40,10 @@ export default function Home() {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
           >
-            <SwiperSlide><div className='swiper-div'>div-1</div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'>div-2</div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'>div-3</div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'>div-4</div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic1} alt='pic1'/></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic2} alt='pic2'/></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic3} alt='pic3'/></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic4} alt='pic4'/></div></SwiperSlide>
           </Swiper>
           <div className='parent'>
             <p className='text1'>text-1</p>
