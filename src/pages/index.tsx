@@ -18,6 +18,24 @@ import pic4 from '../../public/img/pic4.webp';
 import Image from 'next/image';
 
 export default function Home() {
+  const contents=[
+    {
+      picture:pic1,
+      text:'今こそpic1'
+    },
+    {
+      picture:pic2,
+      text:'明日へpic2'
+    },
+    {
+      picture:pic3,
+      text:'更なるpic3'
+    },
+    {
+      picture:pic4,
+      text:'未来にpic4'
+    },
+  ];
   return (
     <>
       <Head>
@@ -40,10 +58,9 @@ export default function Home() {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
           >
-            <SwiperSlide><div className='swiper-div'><Image src={pic1} alt='pic1'/><p>今こそpic1</p></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic2} alt='pic2'/><p>明日へpic2</p></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic3} alt='pic3'/><p>正にpic3</p></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic4} alt='pic4'/><p>未来がpic4</p></div></SwiperSlide>
+            {contents.map((content=>(
+            <SwiperSlide><div className='swiper-div'><Image src={content.picture} alt='pic1'/><p>{content.text}</p></div></SwiperSlide>              
+            )))}
           </Swiper>
         </div>
       </main>
