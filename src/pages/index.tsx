@@ -64,6 +64,7 @@ export default function Home() {
       </Head>
       <main>
         <div>
+          <h3 className='copyRight'>This SwiperApp is created by Ryotaro</h3>
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

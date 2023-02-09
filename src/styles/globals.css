@@ -7,6 +7,16 @@
     padding: 0;
 }
 
+.copyRight{
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    text-shadow: black 3px 3px 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
 .parent:hover{
     color: blue;
 }
@@ -35,16 +45,18 @@
 }
 
 button{
-    width: 50%;
+    width: 30%;
+    height: 5%;
+    font-size: 100%;
     position: absolute;
     top: 10%;
     z-index: 10;
 }
 
 .up_button{
-    left: 0;
+    left: 15%;
 }
 
 .down_button{
-    right: 0;
+    right: 15%;
 }
