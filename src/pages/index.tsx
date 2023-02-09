@@ -40,15 +40,11 @@ export default function Home() {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
           >
-            <SwiperSlide><div className='swiper-div'><Image src={pic1} alt='pic1'/></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic2} alt='pic2'/></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic3} alt='pic3'/></div></SwiperSlide>
-            <SwiperSlide><div className='swiper-div'><Image src={pic4} alt='pic4'/></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic1} alt='pic1'/><p>今こそpic1</p></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic2} alt='pic2'/><p>明日へpic2</p></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic3} alt='pic3'/><p>正にpic3</p></div></SwiperSlide>
+            <SwiperSlide><div className='swiper-div'><Image src={pic4} alt='pic4'/><p>未来がpic4</p></div></SwiperSlide>
           </Swiper>
-          <div className='parent'>
-            <p className='text1'>text-1</p>
-          </div>
-          <p className='text2'>text-2</p>
         </div>
       </main>
     </>
