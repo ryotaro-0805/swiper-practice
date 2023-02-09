@@ -9,11 +9,14 @@
 
 .copyRight{
     color: white;
-    font-size: 2vw;
+    font-size: 4vw;
+    text-align: center;
+    width: 100%;
     position: absolute;
     text-shadow: black 3px 3px 3px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 1%;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
     z-index: 20;
 }
 
@@ -47,7 +50,6 @@
 button{
     width: 30%;
     height: 5%;
-    font-size: 100%;
     position: absolute;
     top: 10%;
     z-index: 10;
