@@ -16,6 +16,8 @@ import pic2 from '../../public/img/pic2.jpg';
 import pic3 from '../../public/img/pic3.webp';
 import pic4 from '../../public/img/pic4.webp';
 import Image from 'next/image';
+import { useState } from 'react';
+import { log } from 'console';
 
 export default function Home() {
   const contents=[
@@ -36,6 +38,21 @@ export default function Home() {
       text:'未来にpic4'
     },
   ];
+
+  const [delayTimer,setDelayTimer]=useState(2000);
+
+  const upFnc=()=>{
+    setDelayTimer((timer)=>timer-500)
+    if (delayTimer<500) setDelayTimer(100);
+  }
+
+  const downFnc=()=>{
+    setDelayTimer((timer)=>timer+500)
+    if (delayTimer>5000) setDelayTimer(5000);
+  }
+  
+  console.log(delayTimer);
+  
   return (
     <>
       <Head>
@@ -52,7 +69,7 @@ export default function Home() {
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             spaceBetween={5}
             slidesPerView={1}
-            autoplay={{ 'delay': 2000 }}
+            autoplay={{ 'delay': delayTimer }}
             navigation
             pagination={{ clickable: true }}
             scrollbar={true}
@@ -63,6 +80,8 @@ export default function Home() {
             <SwiperSlide key={index}><div className='swiper-div'><Image src={content.picture} alt='{content.picture}' /><p>{content.text}</p></div></SwiperSlide>              
             ))}
           </Swiper>
+          <button className='up_button' onClick={upFnc}>Speed-Up</button>
+          <button className='down_button' onClick={downFnc}>Speed-Down</button>
         </div>
       </main>
     </>
