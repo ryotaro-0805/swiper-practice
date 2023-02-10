@@ -17,8 +17,6 @@ import pic3 from '../../public/img/pic3.webp';
 import pic4 from '../../public/img/pic4.webp';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { log } from 'console';
-import { Router } from 'react-router-dom';
 import { useRouter } from 'next/router';
 
 export default function Home() {
