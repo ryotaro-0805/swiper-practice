@@ -16,8 +16,10 @@ import pic2 from '../../public/img/pic2.jpg';
 import pic3 from '../../public/img/pic3.webp';
 import pic4 from '../../public/img/pic4.webp';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { log } from 'console';
+import { Router } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const contents=[
@@ -42,16 +44,32 @@ export default function Home() {
   const [delayTimer,setDelayTimer]=useState(2000);
 
   const upFnc=()=>{
-    setDelayTimer((timer)=>timer-500)
-    if (delayTimer<500) setDelayTimer(100);
-  }
+    if(delayTimer>0){
+      setDelayTimer((timer)=>timer-500)
+    };
+  };
 
   const downFnc=()=>{
-    setDelayTimer((timer)=>timer+500)
-    if (delayTimer>5000) setDelayTimer(5000);
-  }
+    if(delayTimer<5000){
+      setDelayTimer((timer)=>timer+500)
+    };
+  };
+
+  const router=useRouter();
+  const reloadFnc=()=>{
+    router.reload();
+  }  
   
-  console.log(delayTimer);
+  const speedDisplayFnc=()=>{
+    setSpeedCss('speedDisplay_p active');
+    setTimeout(() => {
+    setSpeedCss('speedDisplay_p');
+    }, 2000);
+  }
+  const [speedCss,setSpeedCss]=useState('speedDisplay_p');
+  useEffect(()=>{
+    speedDisplayFnc(); 
+  },[delayTimer]);
   
   return (
     <>
@@ -64,7 +82,8 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <h3 className='copyRight'>This SwiperApp is created by Ryotaro</h3>
+          <h3 className='copyRight' onClick={reloadFnc}>This SwiperApp is created by Ryotaro</h3>
+          <p className={speedCss}>SPEED:{delayTimer}</p>
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -74,8 +93,8 @@ export default function Home() {
             navigation
             pagination={{ clickable: true }}
             scrollbar={true}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
           >
             {contents.map((content,index)=>(
             <SwiperSlide key={index}><div className='swiper-div'><Image src={content.picture} alt='{content.picture}' /><p>{content.text}</p></div></SwiperSlide>              
